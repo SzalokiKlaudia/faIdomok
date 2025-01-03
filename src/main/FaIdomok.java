@@ -73,11 +73,18 @@ public class FaIdomok {
         
     }
     
-    public void kulonbozoSugaruGombok(){
+    public Set<Double> kulonbozoSugaruGombok(){
         
         Set<Double> sugarak = new HashSet<>();
         
+        for (Idom idom : idomok) {
+            if(idom instanceof Gomb){
+                sugarak.add(((Gomb) idom).getSugar());
+            }
+            
+        }
         
+        return new HashSet<>(sugarak);
         
     }
     
@@ -90,6 +97,11 @@ public class FaIdomok {
         idomok.add(new Hasab(4.4, 1.5, 4.0));
         idomok.add(new Hasab(2.2, 3.2, 4.2));
         
+        System.out.println("Idomok súlya: " + idomoksulya() );
+        System.out.println("Gömbök súlya: " + gombokSulya());
+        minMaxTerfogat();
+        System.out.println("Különböző sugarú gömbök: " + kulonbozoSugaruGombok());
+        
        
     }
     
@@ -97,7 +109,8 @@ public class FaIdomok {
     
     
     public static void main(String[] args) {
-        // TODO code application logic here
+        FaIdomok idomok = new FaIdomok();
+        idomok.run();
     }
     
 }
