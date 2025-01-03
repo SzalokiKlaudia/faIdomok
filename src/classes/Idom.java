@@ -10,4 +10,20 @@ package classes;
  */
 public class Idom {
     
+    private static double fajSuly = 0.8;//sűrűség
+
+    
+    public double suly(double terfogat){
+        
+        return fajSuly * terfogat;
+        
+    }
+    
+    public double terfogat(){
+        
+        return 0;
+    }
+
+ 
+    
 }
